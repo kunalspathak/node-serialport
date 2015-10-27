@@ -22,7 +22,8 @@ platform:
   - x64
 
 install:
-  - cmd: ECHO APPVEYOR^: %APPVEYOR%
+  - cmd: ECHO "APPVEYOR ->"
+  - cmd: ECHO %APPVEYOR%
   - cmd: ECHO nodejs_version^: %nodejs_version%
   - cmd: ECHO platform^: %platform%
   - cmd: ECHO msvs_toolset^: %msvs_toolset%
