@@ -24,11 +24,16 @@ platform:
 install:
   - cmd: ECHO "APPVEYOR ->"
   - cmd: ECHO %APPVEYOR%
-  - cmd: ECHO nodejs_version^: %nodejs_version%
-  - cmd: ECHO platform^: %platform%
-  - cmd: ECHO msvs_toolset^: %msvs_toolset%
-  - cmd: ECHO msvs_version^: %msvs_version%
-  - cmd: ECHO TOOLSET_ARGS^: %TOOLSET_ARGS%
+  - cmd: ECHO "nodejs_version ->"
+  - cmd: ECHO %nodejs_version%
+  - cmd: ECHO "platform ->"
+  - cmd: ECHO %platform%
+  - cmd: ECHO "msvs_toolset ->"
+  - cmd: ECHO %msvs_toolset%
+  - cmd: ECHO "msvs_version ->"
+  - cmd: ECHO %msvs_version%
+  - cmd: ECHO "TOOLSET_ARGS ->"
+  - cmd: ECHO %TOOLSET_ARGS%
 
   - cmd: ECHO "APPVEYOR_REPO_COMMIT_MESSAGE ->"
   - cmd: ECHO %APPVEYOR_REPO_COMMIT_MESSAGE%
