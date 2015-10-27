@@ -1,13 +1,14 @@
 # AppVeyor file
 # http://www.appveyor.com/docs/appveyor-yml
 
+os: Visual Studio 2015
+
 # Fix line endings on Windows
 init:
   - git config --global core.autocrlf true
 
 # environment variables
 environment:
-  GYP_MSVS_VERSION: 2015
   NODE_PRE_GYP_GITHUB_TOKEN:
     secure: azLeMAlIn7bfsIjPriD3O8kg3/uLPNOnAE6FgwPvIT+MWSlMsG3giURb7SxQ01tB
 
