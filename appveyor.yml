@@ -41,19 +41,16 @@ install:
   # then we publish the binaries if everything else is successful.
   - cmd: git describe --tags --always HEAD > _git_tag.tmp
   - cmd: SET /p GIT_TAG=<_git_tag.tmp
-  - cmd: ECHO "LATEST LOCAL TAG:"
   - cmd: ECHO %GIT_TAG%
-  - cmd: ECHO "APPVEYOR REPO BRANCH/TAG:"
   - cmd: ECHO %APPVEYOR_REPO_BRANCH%
   - cmd: DEL _git_tag.tmp
   - cmd: IF x%APPVEYOR_REPO_BRANCH%==x%GIT_TAG% SET PUBLISH_BINARY=true
   # Or look for commit message containing `[publish binary]`
   - cmd: IF not x%COMMIT_MSG:[publish binary]=%==x%COMMIT_MSG% SET PUBLISH_BINARY=true
-  - cmd: ECHO "Env Var PUBLISH_BINARY:"
   - cmd: ECHO %PUBLISH_BINARY%
 
 build_script:
-  - cmd: npm install --build-from-source --msvs_version=2013
+  - cmd: npm install --build-from-source --msvs_version=2013 --verbose
 
 test_script:
   - cmd: npm test
