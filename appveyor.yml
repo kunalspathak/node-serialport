@@ -40,7 +40,7 @@ install:
   - cmd: IF not x%COMMIT_MSG:[publish binary]=%==x%COMMIT_MSG% SET PUBLISH_BINARY=true
   - cmd: ECHO "Env Var PUBLISH_BINARY:"
   - cmd: ECHO %PUBLISH_BINARY%
-  - cmd: npm install --build-from-source --msvs_version=2013
+  - cmd: npm install --build-from-source
   - cmd: SET PATH=%cd%\node_modules\.bin\;%PATH%
   - cmd: node serialport.js
   - cmd: IF %PUBLISH_BINARY%==true (node-pre-gyp package 2>&1)
