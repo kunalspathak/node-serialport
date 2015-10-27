@@ -7,6 +7,7 @@ init:
 
 # environment variables
 environment:
+  GYP_MSVS_VERSION: 2015
   NODE_PRE_GYP_GITHUB_TOKEN:
     secure: azLeMAlIn7bfsIjPriD3O8kg3/uLPNOnAE6FgwPvIT+MWSlMsG3giURb7SxQ01tB
 
@@ -40,7 +41,7 @@ install:
   - cmd: IF not x%COMMIT_MSG:[publish binary]=%==x%COMMIT_MSG% SET PUBLISH_BINARY=true
   - cmd: ECHO "Env Var PUBLISH_BINARY:"
   - cmd: ECHO %PUBLISH_BINARY%
-  - cmd: npm install --build-from-source
+  - cmd: npm install --build-from-source --msvs_version=2015
   - cmd: SET PATH=%cd%\node_modules\.bin\;%PATH%
   - cmd: node serialport.js
   - cmd: IF %PUBLISH_BINARY%==true (node-pre-gyp package 2>&1)
